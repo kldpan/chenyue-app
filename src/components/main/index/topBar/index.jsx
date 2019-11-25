@@ -8,9 +8,10 @@ class TopBar extends React.PureComponent{
           <button onClick={this.toPath.bind(this)}>city</button>
         </TopBarSd>
       )
+    }  
       toPath(){
         this.props.history.push("/city")
       }
-    }
+    
 }
 export default withRouter(TopBar)

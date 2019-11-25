@@ -6,6 +6,6 @@ function r(px){
   return (px/baseSize).toFixed(2) + "rem";
 }
 export  const TopBarSd = styled.div`
-  height:$(r(44));
+  height:${r(44)};
   border:1px solid red; 
 ` 
