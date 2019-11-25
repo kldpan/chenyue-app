@@ -1,6 +1,8 @@
 import React from 'react';
 import {TopBarSd} from "@/components/main/index/styled";
 import {withRouter} from "react-router-dom"
+// import {connect} from "react-redux" 
+
 class TopBar extends React.PureComponent{
     render(){
       return(
