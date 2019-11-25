@@ -12,6 +12,7 @@ class TopBar extends React.PureComponent{
       )
     }  
       toPath(){
+        // console.log(this)
         this.props.history.push("/city")
       }
     
