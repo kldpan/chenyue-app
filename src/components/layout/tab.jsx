@@ -75,7 +75,7 @@ class TabBarExample extends React.Component {
             selected={this.state.selectedTab === 'blueTab'}
       
             onPress={() => {
-              console.log(this.props)
+              // console.log(this.props);
               this.setState({
                 selectedTab: 'blueTab',
               });

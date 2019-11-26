@@ -13,10 +13,10 @@ module.exports = function(app) {
     res.json(data);
   });
 
-
+  // https://api.juooo.com /city/city/getSortedCityList?version=6.0.8&referer=2
   app.use(
     proxy("/apis", {
-      target: "https://cnodejs.org",
+      target: "https://api.juooo.com",
       changeOrigin: true,
       pathRewrite: {
         "^/apis": ""

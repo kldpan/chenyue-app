@@ -1,15 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadGetTestDate } from "./actionCreator";
+import HotsList from "./toHotsRecommendList";
 
-import TopBar from "@/components/main/index/topBar"
+import TopBar from "@/components/main/index/topBar";
 import { Button } from 'antd-mobile';
 console.log(Button);
 class One extends React.Component {
   render() {
     return (
       <div id="index"> 
-        <TopBar></TopBar>
+        <TopBar/>
+        <HotsList/>
       </div>
     );
   }
