@@ -9,3 +9,15 @@ export  const TopBarSd = styled.div`
   height:${r(44)};
   border:1px solid red; 
 ` 
+
+export const BannerList=styled.div`
+  .swiper-container{
+    .swiper-wrapper{
+      .swiper-slide{
+        img{
+          height:${r(196)};
+        }
+      }
+    }
+  }
+`

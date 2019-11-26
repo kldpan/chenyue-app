@@ -16,7 +16,7 @@ module.exports = function(app) {
 
   app.use(
     proxy("/apis", {
-      target: "https://cnodejs.org",
+      target: "https://api.juooo.com",
       changeOrigin: true,
       pathRewrite: {
         "^/apis": ""
