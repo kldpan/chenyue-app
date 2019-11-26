@@ -29,8 +29,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html{
+	overflow-x:hidden;
+}
 body {
 	line-height: 1;
+	overflow-x:hidden;
+	/* padding-bottom:1.333rem */
 }
 ol, ul {
 	list-style: none;

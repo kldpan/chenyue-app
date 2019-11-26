@@ -118,7 +118,7 @@ export const VipCss = styled.div`
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
-        .vip-ahead__list__info{
+        .vip-ahead__list__info__title{
           width: 100%;
           font-size: ${r(14)};
           color: #232323;
