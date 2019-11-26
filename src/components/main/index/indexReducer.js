@@ -1,6 +1,5 @@
 import {fromJS,Map} from "immutable";
-import { LOAD_TEST_DATA,STE_CURRENT_CITY} from "./actionCreator";
-import { GET_HOTSRECOMMED_DATA } from "./actionType"
+import {LOAD_TEST_DATA,GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,STE_CURRENT_CITY} from "./actionType.js";
 const defaultState=fromJS({
     num:0,
     testList:[],
@@ -9,7 +8,9 @@ const defaultState=fromJS({
         abbreviation:"",
         name:"全国"
     },
-    testRMYC:[]
+    testRMYC:[],
+    topData:{},
+    vipData:{}
 });
 export default (state=defaultState,action)=>{
     // eslint-disable-next-line default-case
@@ -20,6 +21,13 @@ export default (state=defaultState,action)=>{
             return  state.update("currentCity",x=>x=Map(action.val));
         case GET_HOTSRECOMMED_DATA:
             return  state.set("testRMYC",fromJS(action.val));    
+        case GET_SWIPER_DATA:
+            return state.set("topData",fromJS(action.val));
+        case GET_VIP_DATA:
+            return state.set("vipData",fromJS(action.val))   
+             
+            
+            
     }
     return state;
 }
