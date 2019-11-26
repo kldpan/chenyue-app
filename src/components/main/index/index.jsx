@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadGetTestDate } from "./actionCreator";
+import HotsList from "./toHotsRecommendList";
+
 import Swiper from "./topSection/swiper.jsx";
 import TopBar from "@/components/main/index/topBar"
 import Select from "./topSection/selectList.jsx"
@@ -10,9 +12,11 @@ class One extends React.Component {
   render() {
     return (
       <div id="index"> 
+       
         <TopBar></TopBar>
         <Swiper></Swiper>
         <Select></Select>
+         <HotsList/>
       </div>
     );
   }

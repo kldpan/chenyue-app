@@ -16,7 +16,6 @@ export default class  extends React.Component{
             <Route path="/list" component={List}/>
             <Route path="/test" component={Test}/>
             <Route path="/city" component={City}/>
-
             <Redirect path="/" to="/index"/>
            </Switch> 
         </Fragment>
