@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { loadGetTestDate } from "./actionCreator";
 import Swiper from "./topSection/swiper.jsx";
 import TopBar from "@/components/main/index/topBar"
+import Select from "./topSection/selectList.jsx"
 import { Button } from 'antd-mobile';
 console.log(Button);
 class One extends React.Component {
@@ -11,6 +12,7 @@ class One extends React.Component {
       <div id="index"> 
         <TopBar></TopBar>
         <Swiper></Swiper>
+        <Select></Select>
       </div>
     );
   }

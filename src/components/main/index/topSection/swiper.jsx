@@ -10,7 +10,7 @@ class Swiper extends React.PureComponent {
     
     if(this.props.slide_list){
       return ( 
-      <SwiperBanner>
+      <SwiperBanner id={"topBanner"}>
           
           {
             this.props.slide_list.map((item,index)=>(

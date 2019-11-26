@@ -1,4 +1,4 @@
-import {GET_SWIPER_DATA,LOAD_TEST_DATA} from "./actionType";
+import {GET_SWIPER_DATA,LOAD_TEST_DATA,GET_VIP_DATA} from "./actionType";
 
 const loadGetSwiperData = val=>{
   return{
@@ -6,6 +6,13 @@ const loadGetSwiperData = val=>{
     val
   }
 }
+const getVipHomeSchedular = val=>{
+  return{
+    type:GET_VIP_DATA,
+    val
+  }
+}
+
 
 var poxy = "/apis";
 export const loadGetTestDate = dispatch => {
@@ -35,5 +42,18 @@ export const loadGetSwiperDataAsync = (dispatch,params)=>{
     var val = res.data
     
     dispatch(loadGetSwiperData(val))
+  })
+}
+
+export const getVipHomeSchedularAsync = (dispatch)=>{
+  fetch(poxy+`/vip/index/getVipHomeSchedular?version=6.0.8&referer=2`,{
+    method:"GET"
+  }).then(data=>{
+    return data.json();
+  }).then(res=>{
+    
+    var val = res.data
+    
+    dispatch(getVipHomeSchedular(val))
   })
 }

@@ -17,7 +17,7 @@ class SwiperBanner extends React.Component {
      );
   }
   componentDidMount(){
-    new Swiper ('.swiper-container', { 
+    new Swiper (`#${this.props.id}`, { 
     })        
   }
 }

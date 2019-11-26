@@ -1,5 +1,5 @@
 import {fromJS} from "immutable";
-import {LOAD_TEST_DATA,GET_SWIPER_DATA} from "./actionType.js";
+import {LOAD_TEST_DATA,GET_SWIPER_DATA,GET_VIP_DATA} from "./actionType.js";
 const defaultState=fromJS({
     num:0,
     testList:[],
@@ -8,7 +8,8 @@ const defaultState=fromJS({
         abbreviation:"",
         name:"全国"
     },
-    topData:{}
+    topData:{},
+    vipData:{}
 });
 export default (state=defaultState,action)=>{
     // eslint-disable-next-line default-case
@@ -17,7 +18,8 @@ export default (state=defaultState,action)=>{
            return  state.set("testList",fromJS(action.val));
         case GET_SWIPER_DATA:
             return state.set("topData",fromJS(action.val));
-           
+        case GET_VIP_DATA:
+            return state.set("vipData",fromJS(action.val))   
              
             
             
