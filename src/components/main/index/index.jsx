@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadGetTestDate } from "./actionCreator";
-import Swiper from "./swiper";
+import Swiper from "./topSection/swiper.jsx";
 import TopBar from "@/components/main/index/topBar"
 import { Button } from 'antd-mobile';
 console.log(Button);

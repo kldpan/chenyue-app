@@ -1,7 +1,7 @@
 import React from "react";
-import SwiperBanner from "../../common/Swiper/swiperBanner.jsx"
+import SwiperBanner from "../../../common/Swiper/swiperBanner.jsx"
 import { connect } from "react-redux";
-import {loadGetSwiperDataAsync} from "./actionCreator.js"
+import {loadGetSwiperDataAsync} from "../actionCreator.js"
 // import {toJS} from "immutable";
 
 class Swiper extends React.PureComponent {
