@@ -6,6 +6,8 @@ import HotsList from "./toHotsRecommendList";
 import Swiper from "./topSection/swiper.jsx";
 import TopBar from "@/components/main/index/topBar"
 import Select from "./topSection/selectList.jsx"
+import MiddleComponent from "./middleSection/vipTwo.jsx"
+
 import { Button } from 'antd-mobile';
 console.log(Button);
 class One extends React.Component {
@@ -16,7 +18,8 @@ class One extends React.Component {
         <TopBar></TopBar>
         <Swiper></Swiper>
         <Select></Select>
-         <HotsList/>
+        <HotsList/>
+        <MiddleComponent/>
       </div>
     );
   }

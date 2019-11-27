@@ -1,4 +1,4 @@
-import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,STE_CURRENT_CITY,LOAD_TEST_DATA} from "./actionType";
+import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW} from "./actionType";
 // export const LOAD_TEST_DATA = "index/get_test_data";
 // export const STE_CURRENT_CITY = "index/set_current_city";
 
@@ -25,9 +25,13 @@ const getVipHomeSchedular = val=>{
     val
   }
 }
+const getFloorShow = val=>{
+  return{
+    type:GET_FLOOR_SHOW,
+    val
+  }
+}
 
-
-var poxy = "/apis";
 export const loadGetTestDate = dispatch => {
   return () => {
     fetch("/apis/api/v1/topics", {
@@ -85,5 +89,19 @@ export const getVipHomeSchedularAsync = (dispatch)=>{
     var val = res.data
     
     dispatch(getVipHomeSchedular(val))
+  })
+}
+
+// https://api.juooo.com/home/index/getFloorShow?city_id=0&version=6.0.8&referer=2
+export const getFloorShowAsync = (dispatch,params)=>{
+  fetch(poxy+`/home/index/getFloorShow?city_id=${params.city_id}&version=6.0.8&referer=2`,{
+    method:"GET"
+  }).then(data=>{
+    return data.json();
+  }).then(res=>{
+    
+    var val = res.data
+    
+    dispatch(getFloorShow(val))
   })
 }

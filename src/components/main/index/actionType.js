@@ -5,3 +5,4 @@ export const LOAD_TEST_DATA = "index/load_test_data";
 export const GET_VIP_DATA = "index/get_vip_data";
 export const STE_CURRENT_CITY = "index/set_current_city";
 
+export const GET_FLOOR_SHOW = "index/get_floor_show"

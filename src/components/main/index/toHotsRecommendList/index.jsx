@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {loadIndexHotsListDataAsync} from "@/components/main/index/actionCreator"
-import Swiper from "@/components/common/swiper.jsx";
+import Swiper from "@/components/common/Swiper/swiperBanner.jsx";
 import {Header} from "@/components/main/index/styled";
 import { NICE,RMYC } from "../styled";
 class HotsList extends React.Component {
@@ -19,7 +19,7 @@ class HotsList extends React.Component {
             this.props.testRMYC.map((item,index)=>(
               <div className="swiper-slide" key={index}>
                 <div className="cccc">
-                    <img src={item.get("pic")}  style={{width:"100%",height:"145px"}} />
+                    <img src={item.get("pic")} alt="" style={{width:"100%",height:"145px"}} />
                 </div>
             <NICE>{item.get("show_name")}</NICE>
               </div>

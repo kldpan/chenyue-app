@@ -3,6 +3,7 @@ import SwiperBanner from "../../../common/Swiper/swiperBanner.jsx"
 import { connect } from "react-redux";
 import {loadGetSwiperDataAsync} from "../actionCreator.js"
 // import {toJS} from "immutable";
+import {BannerList} from "@/components/main/index/styled";
 
 class Swiper extends React.PureComponent {
   
@@ -10,17 +11,21 @@ class Swiper extends React.PureComponent {
     
     if(this.props.slide_list){
       return ( 
-      <SwiperBanner id={"topBanner"}>
-          
-          {
-            this.props.slide_list.map((item,index)=>(
-              <div className="swiper-slide" key={index}>
-                <img src={item.get("image_url")} alt=""/>
-              </div>
-            ))
-          }
+      <BannerList>
 
-      </SwiperBanner>
+        <SwiperBanner id={"topBanner"}>
+            
+            {
+              this.props.slide_list.map((item,index)=>(
+                <div className="swiper-slide" key={index}>
+                  <img src={item.get("image_url")} alt=""/>
+                </div>
+              ))
+            }
+
+        </SwiperBanner>
+    </BannerList>
+      
      ); 
     }else{
       return null;
