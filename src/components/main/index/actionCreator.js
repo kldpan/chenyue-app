@@ -1,4 +1,4 @@
-import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW} from "./actionType";
+import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW,GET_HOT_THEATRE} from "./actionType";
 // export const LOAD_TEST_DATA = "index/get_test_data";
 // export const STE_CURRENT_CITY = "index/set_current_city";
 
@@ -32,6 +32,14 @@ const getFloorShow = val=>{
   }
 }
 
+const getHotTheatre = val=>{
+  return{
+    type:GET_HOT_THEATRE,
+    val
+  }
+}
+
+
 export const loadGetTestDate = dispatch => {
   return () => {
     fetch("/apis/api/v1/topics", {
@@ -59,7 +67,6 @@ export const loadIndexHotsListDataAsync = (dispatch,params) => {
         return data.json();
       })
       .then(res => {
-        console.log(res);
         var  val =res.data.hots_show_list;
         dispatch(loadIndexSethotsData(val))
       });
@@ -103,5 +110,18 @@ export const getFloorShowAsync = (dispatch,params)=>{
     var val = res.data
     
     dispatch(getFloorShow(val))
+  })
+}
+
+export const getHotTheatreAsync = (dispatch)=>{
+  fetch(poxy+`/home/index/getHotTheatre?version=6.0.8&referer=2`,{
+    method:"GET"
+  }).then(data=>{
+    return data.json();
+  }).then(res=>{
+    
+    var val = res.data
+    
+    dispatch(getHotTheatre(val))
   })
 }

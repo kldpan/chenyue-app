@@ -6,20 +6,20 @@ import HotsList from "./toHotsRecommendList";
 import Swiper from "./topSection/swiper.jsx";
 import TopBar from "@/components/main/index/topBar"
 import Select from "./topSection/selectList.jsx"
-import MiddleComponent from "./middleSection/vipTwo.jsx"
-
-import { Button } from 'antd-mobile';
-console.log(Button);
+import MiddleComponent from "./middleSection/middleComponetSwiper.jsx"
+import Bscroll from "@/components/common/betterScroll/betterScroll.jsx"
 class One extends React.Component {
   render() {
     return (
-      <div id="index"> 
-       
+      <div id="index">
+
         <TopBar></TopBar>
-        <Swiper></Swiper>
-        <Select></Select>
-        <HotsList/>
-        <MiddleComponent/>
+        <Bscroll>
+          <Swiper></Swiper>
+          <Select></Select>
+          <HotsList />
+          <MiddleComponent />
+        </Bscroll>
       </div>
     );
   }

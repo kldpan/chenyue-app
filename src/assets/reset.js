@@ -35,7 +35,8 @@ html{
 body {
 	line-height: 1;
 	overflow-x:hidden;
-	padding-bottom:1.333rem
+	padding-bottom:1.333rem;
+	/* position:relative; */
 }
 ol, ul {
 	list-style: none;

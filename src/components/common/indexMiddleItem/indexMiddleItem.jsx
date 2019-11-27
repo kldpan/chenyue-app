@@ -1,20 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import SwiperBanner from "@/components/common/Swiper/swiperBanner.jsx"
-
+import TopTitle from "./title.jsx"
 class itmeComponents extends React.PureComponent {
   
   render() { 
-    // console.log(this.props.index);
     
       return(
         <div className="category-block__list">
-          <div className="category-block__list__wrap">
+          <TopTitle title={this.props.title||this.props.data.toJS().title}></TopTitle>
+          {/* <div className="category-block__list__wrap">
             <h3 className="category-block__list__wrap__title">{this.props.data.get("title")}</h3>
             <div className="category-block__list__wrap__arrow">
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAALVBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaTgChpAAAAD3RSTlMA/Aa1qrzcwa+ezcijk5JAYXVXAAAAVUlEQVQoz2MYtoDNAIsghzA2pYEOWASZRbApNWzAIqiKTSlT4QEsouqS2JQGXsAiqpVApCDTxgeYgtoy2OyZQJyLmAqxhAirBLbwcCAy5NgaGIYzAADnxQppL/x7ngAAAABJRU5ErkJggg==" alt=""/>
             </div>
-          </div>
+          </div> */}
           <div className="ategory-block__list__row">
             <div className="row--bg">
               <div className="category-block__list__row__item">

@@ -6,7 +6,6 @@ import {Header} from "@/components/main/index/styled";
 import { NICE,RMYC } from "../styled";
 class HotsList extends React.Component {
   render() {
-    console.log(this.props.testRMYC.toJS())
     if(this.props.testRMYC.size!==0){
       return (
         <Header>

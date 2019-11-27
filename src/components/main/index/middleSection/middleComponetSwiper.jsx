@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import {Middle} from "@/components/main/index/styled";
 import ItmeComponents from "@/components/common/indexMiddleItem/indexMiddleItem.jsx"
-import {getFloorShowAsync} from "@/components/main/index/actionCreator"
+import {getFloorShowAsync,getHotTheatreAsync} from "@/components/main/index/actionCreator"
 
 class MiddleComponent extends React.PureComponent {
   
@@ -16,7 +16,7 @@ class MiddleComponent extends React.PureComponent {
               <ItmeComponents data={item} key={index} index={index}></ItmeComponents>
             ))
           }
-           
+          {/* <ItmeComponents title={"热门场馆"} data={this.props.theatre_list}></ItmeComponents>  */}
         </div>
        </Middle>
       )    
@@ -27,12 +27,16 @@ class MiddleComponent extends React.PureComponent {
     }
     componentDidMount(){
       this.props.getFloorShow.bind(this)()
+      this.props.getHotTheatreAsync.bind(this)()
+
     }
 }  
   const mapStateToProps = state => {
     return {
       currentCity: state.getIn(["indexReducer", "currentCity"]),
       floorShow: state.getIn(["indexReducer", "floorShow"]),
+      theatre_list:state.getIn(["indexReducer","theatre_list"])
+
       // vocalConcert: state.getIn(["indexReducer", "floorShow",0]),
       // musicDrama: state.getIn(["indexReducer", "floorShow",1]),
       // theLivingTheatre: state.getIn(["indexReducer", "floorShow",2]),
@@ -49,6 +53,9 @@ class MiddleComponent extends React.PureComponent {
           city_id:this.props.currentCity.get("city_id")
         }
         getFloorShowAsync(dispatch,temp)
+      },
+      getHotTheatreAsync(){
+        getHotTheatreAsync(dispatch)
       }
       }
     };

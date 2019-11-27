@@ -7,8 +7,13 @@ function r(px){
 }
 export  const TopBarSd = styled.div`
   height:${r(44)};
-  border:1px solid red; 
-` ;
+  width:100%;
+  background:blue;
+  border:1px solid red;
+  position:fixed;
+  top:0;
+  z-index:1000;
+` 
 
 export const Header=styled.div`
    
@@ -167,6 +172,26 @@ export const VipCss = styled.div`
     }
   }
 `
+
+export const ScrollCss = styled.div`
+  .wapper{
+    position:absolute;
+    /* top:${r(46)}; */
+    /* bottom:${r(50)};
+     */
+     top:45.98px;
+     bottom:50px;
+    left:0;
+    right:0;
+    /* overflow:hidden; */
+    /* height:calc(100%-${r(96)});
+    overflow:hidden; */
+  }
+`
+
+
+
+
 export const Middle = styled.div`
   .category-block__list{
     padding-bottom:${r(30)};

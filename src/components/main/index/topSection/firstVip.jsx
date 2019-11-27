@@ -8,7 +8,6 @@ import SwiperBanner from "../../../common/Swiper/swiperBanner.jsx"
 class vipAd extends React.PureComponent {
   
   render() {
-    console.log(this.props);
      
     if(this.props.priorList){
       return(
@@ -67,6 +66,6 @@ class vipAd extends React.PureComponent {
       getVipDataInit(){
         getVipHomeSchedularAsync(dispatch)
       }
-      }
+    }
     };
 export default connect(mapStateToProps, mapDispatchToProps)(vipAd);
