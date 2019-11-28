@@ -1,12 +1,13 @@
 import {fromJS,Map} from "immutable";
-import {LOAD_TEST_DATA,GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,STE_CURRENT_CITY,GET_FLOOR_SHOW,GET_HOT_THEATRE,SET_TOUR_LIST} from "./actionType.js";
+import {LOAD_TEST_DATA,GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,STE_CURRENT_CITY,GET_FLOOR_SHOW,GET_HOT_THEATRE,GET_SHOW_LIST,CHANGE_PAGE,SET_TOUR_LIST} from "./actionType.js";
 const defaultState=fromJS({
     num:0,
     testList:[],
     currentCity:{
         city_id:"0",
         abbreviation:"",
-        name:"全国"
+        name:"全国",
+        
     },
     testRMYC:[],
     topData:{},
@@ -14,6 +15,8 @@ const defaultState=fromJS({
     floorShow:[],
     theatre_list:[],
     tourlist:[],
+    list:[],
+    page:1
 });
 export default (state=defaultState,action)=>{
     // eslint-disable-next-line default-case
@@ -34,6 +37,11 @@ export default (state=defaultState,action)=>{
             return state.set("theatre_list",fromJS(action.val))
         case SET_TOUR_LIST:
            return state.set("tourlist",fromJS(action.val));      
+        case GET_SHOW_LIST:
+            return state.update("list",fromJS(item=>item.concat(action.val)))
+        case CHANGE_PAGE:
+            return state.set("page",fromJS(action.val.page))
+            
     }
     return state;
 }

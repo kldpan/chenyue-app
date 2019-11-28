@@ -10,6 +10,8 @@ import MiddleComponent from "./middleSection/middleComponetSwiper.jsx"
 import Bscroll from "@/components/common/betterScroll/betterScroll.jsx"
 
 import  ToTourList from "@/components/main/index/toTourRecommendList"
+import BotList from "./bottomList/bottomList.jsx"
+
 class One extends React.Component {
   render() {
     return (
@@ -22,6 +24,7 @@ class One extends React.Component {
           <HotsList />
           <ToTourList/>
           <MiddleComponent />
+          <BotList/>
         </Bscroll>
       </div>
     );

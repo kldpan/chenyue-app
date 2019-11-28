@@ -13,7 +13,7 @@ class TourList extends React.Component{
                   <div>
                     {/* <ToTourall>  */}
                        <ToTourh>
-                           <h1>巡回演出</h1>
+                           <div>巡回演出</div>
                        </ToTourh>
                         <Swiper  id={"totour"} config={{
                                  slidesPerView: 1.2,

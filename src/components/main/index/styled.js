@@ -34,7 +34,8 @@ export const NICE=styled.p`
 export const RMYC=styled.h2`
    font-size:${r(19)};
    font-weight:700;
-   margin-bottom:${r(15)}
+   margin-bottom:${r(15)};
+   margin-left:${r(10)};
 `;
 
 
@@ -183,7 +184,7 @@ export const ScrollCss = styled.div`
      bottom:50px;
     left:0;
     right:0;
-    /* overflow:hidden; */
+    overflow:hidden;
     /* height:calc(100%-${r(96)});
     overflow:hidden; */
   }
@@ -338,30 +339,42 @@ export const Middle = styled.div`
     
   /* } */
 `
-
+// 巡回演出
 export const ToTourSd=styled.div`
 width:${r(275)};
-height:${r(235)};
+height:${r(195)};
 margin:0 auto;
 
 >img{
-    width: ${r(275)};
+    display:block;
+    width: ${r(245)};
     height:${r(140)}
+    margin:0 auto;
 }
 >.p1{
-    width:${r(275)};
-    font-size:${r(15)}
+    width:${r(245)};
+    font-size:${r(15)};
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-weight:700;
+    margin:0 auto;
+    margin-top:${r(12)};
 }
 .p2{
-    width:${r(275)};
+    width:${r(245)};
     text-align:center;
     font-size:${r(13)};
     color:#666;
+    margin:0 auto;
+    margin-top:${r(6)};
 }
 `;
 export const ToTourh=styled.div`
-    font-size:${r(12)};
+    font-size:${r(19)};
+    font-weight:700;
+    margin-bottom:${r(15)};
     color:#232323;
-    margin-left:${r(20)};
- 
+    margin-left:${r(10)};
+    margin-top:${r(30)};
 `
