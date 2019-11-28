@@ -1,4 +1,4 @@
-import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW,GET_HOT_THEATRE} from "./actionType";
+import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW,GET_HOT_THEATRE,GET_SHOW_LIST,CHANGE_PAGE} from "./actionType";
 // export const LOAD_TEST_DATA = "index/get_test_data";
 // export const STE_CURRENT_CITY = "index/set_current_city";
 
@@ -39,6 +39,19 @@ const getHotTheatre = val=>{
   }
 }
 
+const getShowList = val=>{
+  return{
+    type:GET_SHOW_LIST,
+    val
+  }
+}
+
+const changePage = val=>{
+  return{
+    type:CHANGE_PAGE,
+    val
+  }
+}
 
 export const loadGetTestDate = dispatch => {
   return () => {
@@ -124,4 +137,25 @@ export const getHotTheatreAsync = (dispatch)=>{
     
     dispatch(getHotTheatre(val))
   })
+}
+
+
+export const getShowListAsync = (dispatch,params,fn)=>{
+  console.log(params)
+  // console.log(fn)
+  fetch(poxy+`/Show/Search/getShowList?cityAdd=&page=${params.page}&version=6.0.8&referer=1`,{
+    method:"GET"
+  }).then(data=>{
+    return data.json();
+  }).then(res=>{
+    var val = res.data.list;
+    fn()
+    dispatch(getShowList(val))
+  })
+} 
+
+
+export const changePageAsync = (dispatch,params)=>{
+
+  dispatch(changePage(params))
 }

@@ -8,6 +8,8 @@ import TopBar from "@/components/main/index/topBar"
 import Select from "./topSection/selectList.jsx"
 import MiddleComponent from "./middleSection/middleComponetSwiper.jsx"
 import Bscroll from "@/components/common/betterScroll/betterScroll.jsx"
+import BotList from "./bottomList/bottomList.jsx"
+
 class One extends React.Component {
   render() {
     return (
@@ -19,6 +21,7 @@ class One extends React.Component {
           <Select></Select>
           <HotsList />
           <MiddleComponent />
+          <BotList/>
         </Bscroll>
       </div>
     );

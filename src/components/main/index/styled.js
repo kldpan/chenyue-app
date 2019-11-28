@@ -183,7 +183,7 @@ export const ScrollCss = styled.div`
      bottom:50px;
     left:0;
     right:0;
-    /* overflow:hidden; */
+    overflow:hidden;
     /* height:calc(100%-${r(96)});
     overflow:hidden; */
   }
