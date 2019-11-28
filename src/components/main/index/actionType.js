@@ -8,3 +8,5 @@ export const STE_CURRENT_CITY = "index/set_current_city";
 export const GET_FLOOR_SHOW = "index/get_floor_show"
 
 export const GET_HOT_THEATRE = "index/get_hot_theatre"
+
+export const SET_TOUR_LIST = "index/set_tour_list";

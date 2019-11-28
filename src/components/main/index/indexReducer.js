@@ -1,5 +1,5 @@
 import {fromJS,Map} from "immutable";
-import {LOAD_TEST_DATA,GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,STE_CURRENT_CITY,GET_FLOOR_SHOW,GET_HOT_THEATRE} from "./actionType.js";
+import {LOAD_TEST_DATA,GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,STE_CURRENT_CITY,GET_FLOOR_SHOW,GET_HOT_THEATRE,SET_TOUR_LIST} from "./actionType.js";
 const defaultState=fromJS({
     num:0,
     testList:[],
@@ -12,7 +12,8 @@ const defaultState=fromJS({
     topData:{},
     vipData:{},
     floorShow:[],
-    theatre_list:[]
+    theatre_list:[],
+    tourlist:[],
 });
 export default (state=defaultState,action)=>{
     // eslint-disable-next-line default-case
@@ -31,7 +32,8 @@ export default (state=defaultState,action)=>{
             return state.set("floorShow",fromJS(action.val))
         case GET_HOT_THEATRE:
             return state.set("theatre_list",fromJS(action.val))
-            
+        case SET_TOUR_LIST:
+           return state.set("tourlist",fromJS(action.val));      
     }
     return state;
 }

@@ -338,3 +338,30 @@ export const Middle = styled.div`
     
   /* } */
 `
+
+export const ToTourSd=styled.div`
+width:${r(275)};
+height:${r(235)};
+margin:0 auto;
+
+>img{
+    width: ${r(275)};
+    height:${r(140)}
+}
+>.p1{
+    width:${r(275)};
+    font-size:${r(15)}
+}
+.p2{
+    width:${r(275)};
+    text-align:center;
+    font-size:${r(13)};
+    color:#666;
+}
+`;
+export const ToTourh=styled.div`
+    font-size:${r(12)};
+    color:#232323;
+    margin-left:${r(20)};
+ 
+`

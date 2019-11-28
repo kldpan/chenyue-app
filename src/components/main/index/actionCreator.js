@@ -1,4 +1,4 @@
-import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW,GET_HOT_THEATRE} from "./actionType";
+import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FLOOR_SHOW,GET_HOT_THEATRE,SET_TOUR_LIST} from "./actionType";
 // export const LOAD_TEST_DATA = "index/get_test_data";
 // export const STE_CURRENT_CITY = "index/set_current_city";
 
@@ -6,6 +6,13 @@ import {GET_SWIPER_DATA,GET_VIP_DATA,GET_HOTSRECOMMED_DATA,LOAD_TEST_DATA,GET_FL
 const loadIndexSethotsData= val => {
   return {
     type:GET_HOTSRECOMMED_DATA,
+    val
+  }
+}
+// 巡演
+const loadIndexTourListDateAsync=val=>{
+  return {
+    type:SET_TOUR_LIST,
     val
   }
 }
@@ -125,3 +132,16 @@ export const getHotTheatreAsync = (dispatch)=>{
     dispatch(getHotTheatre(val))
   })
 }
+
+//巡回演出接口
+export  const loadIndexTourListDate =(dispatch,params)=>{
+  fetch(poxy+`/home/index/getTourRecommendList?city_id=${params.city_id}&version=6.0.8&referer=2`,{
+     method:"GET"
+  }).then(data =>{
+    return data.json();
+  }).then(res=>{
+     console.log(res.data.tour_show_list)
+     var val=res.data.tour_show_list
+     dispatch(loadIndexTourListDateAsync(val))
+  }) 
+}  
